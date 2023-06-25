@@ -1,7 +1,33 @@
-let myLeads = [];
+let myLeads = ["www.awesome.com"];
+myLeads = JSON.stringify(myLeads);
+console.log(myLeads);
+
+
+//Usimg JSO>parse yo convert string to array
+// let myLeads =` ["www.awesome.com"]`;
+// myLeads = JSON.parse(myLeads);
+// myLeads.push("www.epliclead.com")
+// console.log(myLeads);
+
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+
+// 1. Save a key-value pair in localStorage
+// 2. Refresh the page. Get the value and log it to the console
+// 3. Clear localStorage
+
+// HINTS:
+// localStorage.setItem(key, value)
+// localStorage.getItem(key)
+// localStorage.clear()
+// PS: both key and value need to be strings
+
+
+// localStorage.setItem("myLeads","www.exampleLead.com")
+// console.log(localStorage.getItem("myLeads"));
+// localStorage.clear();
 
 inputBtn.addEventListener("click", function () {
     myLeads.push(inputEl.value);
