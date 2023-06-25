@@ -1,9 +1,10 @@
-let myLeads = ["www.awesome.com"];
-myLeads = JSON.stringify(myLeads);
-console.log(myLeads);
+let myLeads = [];
+//Using stringify to convert array into string
+// myLeads = JSON.stringify(myLeads);
+// console.log(myLeads);
 
 
-//Usimg JSO>parse yo convert string to array
+//Usimg JSON.parse to convert string to array
 // let myLeads =` ["www.awesome.com"]`;
 // myLeads = JSON.parse(myLeads);
 // myLeads.push("www.epliclead.com")
@@ -13,6 +14,8 @@ console.log(myLeads);
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+
+const  leadsFromLocalStorage = JSON.parselocalStorage.getItem(myLeads)
 
 // 1. Save a key-value pair in localStorage
 // 2. Refresh the page. Get the value and log it to the console
@@ -32,7 +35,12 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function () {
     myLeads.push(inputEl.value);
     inputEl.value = "";
+    localStorage.setItem("myLeads",JSON.stringify(myLeads));
+
+
     renderLeads();
+
+    console.log(localStorage.getItem("myLeads"));
 })
 function renderLeads() {
 
