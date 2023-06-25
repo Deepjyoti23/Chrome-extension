@@ -12,7 +12,14 @@ function renderLeads() {
 
     let listItems = "";
     for (let i = 0; i < myLeads.length; i++) {
-        listItems += "<li><a href='" + myLeads[i] + "' target = '_blank'>" + myLeads[i] + "</a></li>";
+        // listItems += "<li><a href='" + myLeads[i] + "' target = '_blank'>" + myLeads[i] + "</a></li>";
+        listItems += `
+            <li>
+                <a href='${myLeads[i]}' target = '_blank'> 
+                    ${myLeads[i]}
+                </a>
+            </li>
+        `;
         //first way of doing this
         //  ulEl.innerHTML += "<li><a href='#'>" + myLeads[i] + "</a></li>"
         // console.log(myLeads[i]);
