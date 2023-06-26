@@ -12,12 +12,19 @@ if (leadsFromLocalStorage) {
     renderLeads(myLeads); 
 }
 
-const tabs = [{url :"https://www.linkedin.com/in/deepjyoti1999"}]
+// const tabs = [{url :"https://www.linkedin.com/in/deepjyoti1999"}]
+
+// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//   })
+
 tabBtn.addEventListener("click",function(){
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-    renderLeads(myLeads);
-    console.log(tabs[0].url);
+    chrome.tabs.query({active: true, currentWindow: true},function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads));
+        renderLeads(myLeads);
+    
+    })
+    // console.log(tabs[0].url);
 })
 
 function renderLeads(leads) {
